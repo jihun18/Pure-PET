@@ -20,11 +20,8 @@ try:
         # 실시간 프레임을 배열(Array) 형태로 가져오기
         frame = picam2.capture_array()
 
-        # Picamera2는 RGB 방식, OpenCV는 BGR 방식을 사용하므로 색상 변환 필수
-        frame_bgr = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
-
         # 화면에 출력
-        cv2.imshow('Pure-PET Pi5 (Picamera2)', frame_bgr)
+        cv2.imshow('Pure-PET Pi5 (Picamera2)', frame)
 
         # 'q' 키를 누르면 종료
         if cv2.waitKey(1) & 0xFF == ord('q'):
